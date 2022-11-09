@@ -1,0 +1,222 @@
+body{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.pagina{
+    display: grid;
+    grid-template-areas:
+    'sidebar'
+    'ordenador'
+    'galeria'
+    'pagination'
+    'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 75px 1fr 50px;
+    text-align: center;
+    height: 100vh;
+    flex-direction: column;
+    
+}
+
+
+.sidebar{
+    background-color: rgb(61, 61, 88);
+    color: white;
+    /* display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center; */
+    display: grid;
+    grid-template-areas: 
+    'auto' 'barra';
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-inline: 10px;
+    grid-area: sidebar;
+
+}  
+
+.lista{
+    display: none;
+}
+ .auto{
+    display: flex;
+    justify-content: start;
+
+ }
+
+ .auto i{
+    padding-inline: 10px;
+ }
+ .barra{
+    display: flex;
+    justify-content: end;
+ }
+
+ .ordenador{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    padding-block: 10px;
+    font-size: medium;
+    grid-area: ordenador;
+ }
+ .filtro{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-inline: 10px;
+    height: 30px;   
+ }
+
+ select{
+    background-color: white;
+    font-size: medium;
+ }
+
+ .galeria{
+    display: grid;
+    /* grid-column: auto; */
+    grid-template-columns: 1fr;
+    margin-block: 30px;
+    grid-area: galeria;
+
+ }
+
+ .galeria img{
+    width: 75%;
+    object-fit: contain;
+ }
+
+ .card{
+    border: solid 1px grey;
+    margin-block: 20px;
+    padding-bottom: 10px;
+ }
+
+ button{
+    background-color: rgb(61, 61, 88);
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+
+ }
+
+ h4{
+    font-size: 20px;
+ }
+
+.pagination{
+    display: flex;
+    grid-area: pagination;
+    align-items: center;
+    justify-content: center;
+}
+
+ .pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+ }
+
+ .pagination a.active {
+    background-color: rgb(61, 61, 88);
+    color: white;
+}
+
+.icons{
+    padding-inline: 5px;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.footer{
+    background-color: rgb(61, 61, 88);
+    color: white;
+    text-align: center;
+    align-items: center;
+    grid-area: footer;
+
+}
+
+@media(min-width: 576px) {
+
+    .pagina{
+        display: grid;
+        grid-template-areas: 
+        'sidebar ordenador'
+        'sidebar galeria'
+        'footer pagination';
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr 7fr;
+    }
+
+    .galeria{
+        grid-area: galeria;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+    }
+    .galeria .card{
+        margin-inline: 10px;
+    }
+
+    .card img{
+        object-fit: contain;
+        width: 250px;
+        height: 250px;
+    }
+
+    .ordenador{
+        grid-area: ordenador;
+        display: flex;
+        color: white;
+    }
+    .sidebar{
+        grid-area: sidebar;
+        vertical-align: middle;
+        align-items: center; 
+        vertical-align: middle;
+        display: flex;
+        justify-content:flex-start;
+        text-align: center;
+        padding-block: 15px;
+        flex-direction:column;
+    }
+
+    .lista{
+        display: flex;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li{
+        padding-bottom: 10px;
+    }
+
+    .auto{
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+
+    }
+    .barra{
+        display: none;
+    }
+
+    .footer{
+        grid-area: footer;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(34, 34, 40);
+    }
+}
